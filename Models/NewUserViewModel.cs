@@ -42,7 +42,7 @@ namespace BEE.Models
         [Compare("Password", ErrorMessage = "☝🏻 Password and confirmation must match.")]
         [Display(Name = "Confirm Password")]
         [DataType(DataType.Password)]
-        public string confirmPassword { get; set; }
+        public string cpassword { get; set; }
 
         [Display(Name = "User Type")]
         public string userType { get; set; }
