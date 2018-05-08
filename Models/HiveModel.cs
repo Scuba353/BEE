@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BEE.Models
@@ -19,8 +18,7 @@ namespace BEE.Models
         public string status { get; set; }
         public string notes { get; set; }
         
-        public DateTime createdAt { get; set; }
-        public DateTime updatedAt { get; set; }
+        
 
         
         [ForeignKey("userid")]

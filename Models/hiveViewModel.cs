@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BEE.Models
 {
-    public class hiveViewModel : BaseEntity
+    public class HiveViewModel : BaseEntity
     {
         [Required( ErrorMessage = "Hive Address is required.")]
         [MinLength(2)]
