@@ -22,7 +22,7 @@ namespace BEE.Models
         public int userid { get; set; }
        
         [ForeignKey ("userid")]
-        public user usergiving { get; set; }
+        public user users { get; set; }
 
     }
 }

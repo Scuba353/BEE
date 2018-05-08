@@ -26,7 +26,7 @@ namespace BEE.Models
 
 
 
-        public user user { get; set; }
+        public user users { get; set; }
 
 
     }

@@ -11,6 +11,5 @@ namespace BEE.Models
         public DbSet<hive> hives { get; set; }
         public DbSet<permission> permissions { get; set; }
 
-
     }
 }
