@@ -12,22 +12,9 @@ namespace BEE.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View("Register");
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
 
         public IActionResult Error()
         {
