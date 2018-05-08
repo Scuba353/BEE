@@ -18,11 +18,7 @@ namespace BEE.Models
         public string status { get; set; }
         public string notes { get; set; }
         
-<<<<<<< HEAD:Models/Hive.cs
-
-=======
         
->>>>>>> fb7869f38d73aeb3faf578fb114d2ce928fb4899:Models/HiveModel.cs
 
         
         [ForeignKey("userid")]

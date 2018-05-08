@@ -20,13 +20,10 @@ namespace BEE.Controllers
         public IActionResult Index()
         {
             return View();
-<<<<<<< HEAD
-=======
         }
         public IActionResult LoginUser()
         {
             return View("Register");
->>>>>>> fb7869f38d73aeb3faf578fb114d2ce928fb4899
         }
 
         public IActionResult Error()
