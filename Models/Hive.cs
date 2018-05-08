@@ -19,8 +19,7 @@ namespace BEE.Models
         public string status { get; set; }
         public string notes { get; set; }
         
-        public DateTime createdAt { get; set; }
-        public DateTime updatedAt { get; set; }
+
 
         
         [ForeignKey("userid")]

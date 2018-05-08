@@ -12,7 +12,7 @@ namespace BEE.Controllers
     {
         public IActionResult Index()
         {
-            return View("Register");
+            return View();
         }
 
 

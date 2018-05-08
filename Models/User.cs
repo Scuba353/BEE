@@ -20,8 +20,6 @@ namespace BEE.Models
         public string password { get; set; }
         public string userType { get; set; }
 
-        public DateTime createdAt { get; set; }
-        public DateTime updatedAt { get; set; }
         // public List<hive> hives { get; set; }
         // public List<permission> permissions { get; set; }
         // The name Accounts above this line and below this line can be named anything but must be named the same

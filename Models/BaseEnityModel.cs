@@ -4,8 +4,8 @@ namespace BEE.Models
 {
     public abstract class BaseEntity {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string created_at { get; set; }
+        public string createdAt { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public string updated_at { get; set; }
+        public string updatedAt { get; set; }
     }
 }
