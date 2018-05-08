@@ -12,10 +12,13 @@ namespace BEE.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View("Register");
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> mags
 
         public IActionResult Error()
         {
