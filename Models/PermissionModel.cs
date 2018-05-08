@@ -19,10 +19,10 @@ namespace BEE.Models
         public string accessTime { get; set; }
 
 
-    //     public int userid { get; set; }
+        public int userid { get; set; }
        
-    //    [ForeignKey ("userid")]
-    //     public user usergiving { get; set; }
+        [ForeignKey ("userid")]
+        public user users { get; set; }
 
     }
 }

@@ -15,11 +15,6 @@ namespace BEE.Controllers
             return View("Register");
         }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> mags
-
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
