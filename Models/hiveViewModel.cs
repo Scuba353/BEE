@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BEE.Models
@@ -25,7 +22,7 @@ namespace BEE.Models
         public string hiveState { get; set; }
 
         [Required( ErrorMessage = "Hive Zip is required.")]
-        [MinLength(2)]
+        [MinLength(5)]
         [Display(Name = "Hive Zip: ")]
         public int hiveZip { get; set; }
 
