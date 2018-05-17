@@ -1,0 +1,65 @@
+@model List<BEE.Models.HiveModel>
+
+
+<div asp-validation-summary="All"></div>
+@if( TempData["error"] != null )
+{
+    <p>@TempData["error"]</p>
+}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">BEE</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <!-- <li><a class="align-right" asp-area="" asp-controller="Home" asp-action="LoginUser">Login</a></li> -->
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+
+<div class="container" style="background-image: url('/images/hiveback2.jpg')" >
+
+<h2>Welcome, @ViewBag.RetrievedUser.firstName!</h2><hr>
+<h3> All the Hives You're Managing: </h3>
+
+
+<table>
+    <tr>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>Age of Hive</th>
+        <th>Status</th>
+        <th>Notes</th>
+    </tr>
+        @foreach( var rev in Model )
+        {
+            <tr>
+                <td>@rev.hiveAddress</td>
+                <td>@rev.hiveCity</td>
+                <td>@rev.hiveState</td>
+                <td>@rev.hiveZip</td>
+                <td>@rev.age</td>
+                <td>@rev.status</td>
+                <td>@rev.notes</td>
+                <form asp-controller="Hive" asp-action="HiveDetails" asp-route-id="@rev.hiveid" method="Post">
+                    <button type="submit">Edit Hive</button>
+                </form>
+                <form asp-controller="Hive" asp-action="DeleteHiveForm" asp-route-id="@rev.hiveid" method="Post">
+                    <button type="submit">Delete Hive</button>
+                </form>
+                <hr>
+            </tr>
+        }
+</table>
