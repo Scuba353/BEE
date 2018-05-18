@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BEE.Models
 {
-    public class RegisteredUserViewModel : BaseEntity
+    public class NewLogUserViewModel : BaseEntity
     {
 
         [Required(ErrorMessage = "☝🏻 Your registered email is required.")]
