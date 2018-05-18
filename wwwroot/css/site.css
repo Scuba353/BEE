@@ -1,4 +1,5 @@
-﻿body {
+﻿
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -32,4 +33,25 @@
     .carousel-caption {
         display: none;
     }
+}
+
+
+
+#HiveAddBG{
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('/images/hiveback2.jpg');
+    padding-top: 25px;
+}
+
+#HiveCityStateZip{
+    padding-bottom: 70px;
+}
+
+#HiveCity{
+    padding: 0px;
+}
+
+#HiveZip{
+    padding: 0px;
 }
