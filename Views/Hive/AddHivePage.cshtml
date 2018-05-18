@@ -1,0 +1,80 @@
+@model BEE.Models.HiveViewModel
+<div asp-validation-summary="All"></div>
+@if( TempData["error"] != null )
+{
+    <p>@TempData["error"]</p>
+}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">BEE</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <!-- <li><a class="align-right" asp-area="" asp-controller="Home" asp-action="LoginUser">Login</a></li> -->
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+
+<div class="container" style="background-image: url('/images/hiveback2.jpg')" >
+
+
+<h3> Register a Hive You are Managing </h3>
+
+<hr>
+    
+    <form asp-controller="Hive" asp-action="CreateHiveForm" method="POST">
+        
+        <div class="form-group">
+        <!-- <label asp-for="hiveAddress"></label> -->
+        <input class ="form-control" asp-for="hiveAddress"/><br>
+        </div>
+
+        <div class="form-row" no-gutters>
+            <div class="col-md-4">
+                <!-- <label asp-for="hiveCity"></label> -->
+                <input class ="form-control" asp-for="hiveCity"/><br>
+            </div>
+
+            <div class="col-md-4">
+                <!-- <label asp-for="hiveState"></label> -->
+                <input class ="form-control" asp-for="hiveState"/><br>
+            </div>
+            
+            <div class="col-md-4">
+                <!-- <label asp-for="hiveZip"></label> -->
+                <input class ="form-control" asp-for="hiveZip"/><br>
+            </div>
+        </div>
+        
+        <div class="form-group">
+        <!-- <label asp-for="age"></label> -->
+        <input class ="form-control" asp-for="age"/><br>
+        </div>
+
+        <div class="form-group">
+        <!-- <label asp-for="status"></label> -->
+        <input class ="form-control" asp-for="status"/><br>
+        </div>
+
+        <div class="form-group">
+        <!-- <label asp-for="notes"></label> -->
+        <input class ="form-control" asp-for="notes"/><br>
+        </div>
+    
+        <div class="form-group">
+        <button type="submit" class="btn btn-info"> Register Hive </button>
+        </div>
+
+    </form>
+    
+</div>

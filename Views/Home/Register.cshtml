@@ -4,7 +4,7 @@
 {
     <p>@TempData["error"]</p>
 }
-<nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -23,9 +23,6 @@
             </div>
         </div>
     </nav>
-<br>
-<h1>🌷 Hi Mags! 🌼</h1>
-<br>
 
 <div id="Login">
     @Html.Partial("Login")
@@ -33,8 +30,7 @@
 
 <div id="Register">
 <h3> Register </h3>
-<!-- <a asp-action="LoginUserPage">Already Registered?</a> -->
-<hr>
+<!-- <hr> -->
     <div class="form-group">
         <form asp-controller="Home" asp-action="AddUserForm" method="POST">
             <label asp-for="firstName"></label>
@@ -58,14 +54,20 @@
             <label asp-for="email"></label>
             <input class ="form-control" asp-for="email"/><br>
 
-            <label asp-for="userType"></label>
-            <input class ="form-control" asp-for="userType"/><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" asp-for="userType" type="radio"  id="inlineRadio1" value="PropertyOwner">
+                <label asp-for="userType" class="form-check-label">Property Owner</label>
+                <input class="form-check-input" asp-for="userType" type="radio"  id="inlineRadio2" value="BeeKeeper">
+                <label asp-for="userType"class="form-check-label">Bee Keeper</label>
+            </div><br>
+            <!-- <label asp-for="userType"></label>
+            <input class ="form-control" asp-for="userType"/><br> -->
 
             <label asp-for="password"></label>
             <input class ="form-control" asp-for="password"/><br>
 
-            <!-- <label asp-for="confirmPassword"></label>
-            <input class ="form-control" asp-for="confirmPassword"/><br> -->
+            <label asp-for="cpassword"></label>
+            <input class ="form-control" asp-for="cpassword"/><br>
 
             <button type="submit" class="btn btn-info" >Submit</button>
         </form>
