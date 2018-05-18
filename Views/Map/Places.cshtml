@@ -2,6 +2,7 @@
     ViewData["Title"] = "Bee Map";
 }
 
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -17,10 +18,18 @@
             <ul class="nav navbar-nav">
                 <li><a class="align-left" asp-area="" asp-controller="Login" asp-action="Index">Add Hive</a></li>
                 <li><a class="align-left" asp-area="" asp-controller="Login" asp-action="Index">Give Permission</a></li>
-
                 <li><a class="align-right" asp-area="" asp-controller="Login" asp-action="Index">Logout</a></li>
 
             </ul>
         </div>
     </div>
 </nav>
+<h1>All Hive Locations!</h1>
+<p>Please allow a moment for the map to locate your position.</p>
+<div id="map"></div>
+<script src="~/js/site.js"></script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgzpuX4yBn3Ae67p0s0Zkera5oPurNycU&callback=initMap">
+</script>
+
+
