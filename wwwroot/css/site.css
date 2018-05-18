@@ -26,6 +26,20 @@ body {
 #qrCode {
     margin: 15px;
 }
+#Register{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10%;
+}
+#Login{
+    display: inline-block;
+    
+}
+
+#map {
+    height: 400px;
+  }
+
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {

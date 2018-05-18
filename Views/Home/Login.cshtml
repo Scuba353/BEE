@@ -1,0 +1,20 @@
+@model BEE.Models.RegisteredUserViewModel
+
+
+<h3> Login </h3>
+
+<!-- <a asp-action="Index">Need to Register?</a> -->
+<!-- <hr> -->
+<!-- 
+<div asp-validation-summary="All"></div> -->
+
+<form asp-controller="Home" asp-action="LoginUserForm" method="POST">
+
+    <label asp-for="email"></label>
+    <input class ="form-control" asp-for="email"/><br>
+
+    <label asp-for="password"></label>
+    <input class ="form-control" asp-for="password"/><br>
+
+    <button type="submit" class="btn btn-info" >Submit</button>
+</form>
