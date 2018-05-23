@@ -14,9 +14,9 @@
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <body>
     <div id="second">
-        <div id="Login">
-            @Html.Partial("NewLogin")
-        </div>
+        <!-- <div id="Login"> -->
+            <!-- Html.Partial("NewLogin") add back the at symbol-->
+        <!-- </div> -->
 		<div class="myform form ">
             <div class="logo mb-3">
                 <div class="col-md-12 text-center">
@@ -68,12 +68,15 @@
                 <div class="col-md-12 text-center mb-3">
                     <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Get Registered</button>
                 </div>
+                
+        </div>
+            </form>
+            <form asp-controller="Home" asp-action="LoginUserForm" method="POST">
                 <div class="col-md-12 ">
                     <div class="form-group">
-                        <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
+                        <p class="text-center"><a asp-action="LoginUserForm" id="signin">Already have an account?</a></p>
                     </div>
                 </div>
-        </div>
             </form>
     </div>
 	    </div>

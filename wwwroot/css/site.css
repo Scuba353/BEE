@@ -29,11 +29,18 @@ body {
 #Register{
     display: inline-block;
     vertical-align: top;
-    margin-left: 10%;
+    margin-left: 20%;
 }
 #Login{
     display: inline-block;
+    vertical-align: top;
+    margin-left: 20%;
     
+}
+.loginphoto{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
 }
 
 #map {

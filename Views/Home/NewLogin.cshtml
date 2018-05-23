@@ -1,4 +1,9 @@
 @model BEE.Models.NewLogUserViewModel
+<div asp-validation-summary="All"></div>
+@if(TempData["error"] != null)
+{
+    <p>@TempData["error"]</p>
+}
 
 <body>
     <div class="container">
@@ -18,7 +23,7 @@
                            </div>
                            <div class="form-group">
                               <label asp-for="password"></label>
-                              <input class ="form-control" asp-for="password" id="password"  class="form-control" aria-describedby="emailHelp">
+                              <input class ="form-control" asp-for="password" id="password" aria-describedby="emailHelp">
                            </div>
                            <div class="form-group">
                               <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
@@ -40,7 +45,7 @@
                               </p>
                            </div>
                            <div class="form-group">
-                              <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
+                              <p class="text-center">Don't have account? <a asp-action="AddUserForm" id="signup">Sign up here</a></p>
                            </div>
                         </form>
                  
