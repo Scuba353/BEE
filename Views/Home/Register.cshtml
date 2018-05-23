@@ -24,52 +24,55 @@
         </div>
     </nav>
 
+<div class="loginphoto" style="background-image: url('/images/beefarm.jpg')" >
+
 <div id="Login">
     @Html.Partial("Login")
 </div>
 
-<div id="Register">
-<h3> Register </h3>
-<!-- <hr> -->
-    <div class="form-group">
-        <form asp-controller="Home" asp-action="AddUserForm" method="POST">
-            <label asp-for="firstName"></label>
-            <input class ="form-control" asp-for="firstName"/><br>
+    <div id="Register">
+    <h3> Register </h3>
+    <!-- <hr> -->
+        <div class="form-group">
+            <form asp-controller="Home" asp-action="AddUserForm" method="POST">
+                <label asp-for="firstName"></label>
+                <input class ="form-control" asp-for="firstName"/><br>
 
-            <label asp-for="lastName"></label>
-            <input class ="form-control" asp-for="lastName"/><br>
+                <label asp-for="lastName"></label>
+                <input class ="form-control" asp-for="lastName"/><br>
 
-            <label asp-for="stAddress"></label>
-            <input class ="form-control" asp-for="stAddress"/><br>
+                <label asp-for="stAddress"></label>
+                <input class ="form-control" asp-for="stAddress"/><br>
 
-            <label asp-for="city"></label>
-            <input class ="form-control" asp-for="city"/><br>
+                <label asp-for="city"></label>
+                <input class ="form-control" asp-for="city"/><br>
 
-            <label asp-for="state"></label>
-            <input class ="form-control" asp-for="state"/><br>
+                <label asp-for="state"></label>
+                <input class ="form-control" asp-for="state"/><br>
 
-            <label asp-for="zip"></label>
-            <input class ="form-control" asp-for="zip"/><br>
+                <label asp-for="zip"></label>
+                <input class ="form-control" asp-for="zip"/><br>
 
-            <label asp-for="email"></label>
-            <input class ="form-control" asp-for="email"/><br>
+                <label asp-for="email"></label>
+                <input class ="form-control" asp-for="email"/><br>
 
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" asp-for="userType" type="radio"  id="inlineRadio1" value="PropertyOwner">
-                <label asp-for="userType" class="form-check-label">Property Owner</label>
-                <input class="form-check-input" asp-for="userType" type="radio"  id="inlineRadio2" value="BeeKeeper">
-                <label asp-for="userType"class="form-check-label">Bee Keeper</label>
-            </div><br>
-            <!-- <label asp-for="userType"></label>
-            <input class ="form-control" asp-for="userType"/><br> -->
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" asp-for="userType" type="radio"  id="inlineRadio1" value="PropertyOwner">
+                    <label asp-for="userType" class="form-check-label">Property Owner</label>
+                    <input class="form-check-input" asp-for="userType" type="radio"  id="inlineRadio2" value="BeeKeeper">
+                    <label asp-for="userType"class="form-check-label">Bee Keeper</label>
+                </div><br>
+                <!-- <label asp-for="userType"></label>
+                <input class ="form-control" asp-for="userType"/><br> -->
 
-            <label asp-for="password"></label>
-            <input class ="form-control" asp-for="password"/><br>
+                <label asp-for="password"></label>
+                <input class ="form-control" asp-for="password"/><br>
 
-            <label asp-for="cpassword"></label>
-            <input class ="form-control" asp-for="cpassword"/><br>
+                <label asp-for="cpassword"></label>
+                <input class ="form-control" asp-for="cpassword"/><br>
 
-            <button type="submit" class="btn btn-info" >Submit</button>
-        </form>
+                <button type="submit" class="btn btn-info" >Submit</button>
+            </form>
+        </div>
     </div>
 </div>
