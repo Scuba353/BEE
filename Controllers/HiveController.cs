@@ -47,7 +47,7 @@ namespace BEE.Controllers
                 _context.hives.Add( NewestHive );
                 _context.SaveChanges();
 
-                NewestHive = _context.hives.SingleOrDefault( a => a.status == model.status );
+                NewestHive = _context.hives.SingleOrDefault( a => a.hiveid == NewestHive.hiveid );
                 HttpContext.Session.SetInt32( "hiveid", NewestHive.hiveid );
                 // return RedirectToAction( "ShowHiveDetails", new { id = HttpContext.Session.GetInt32( "hiveid" )});
                 
@@ -58,23 +58,23 @@ namespace BEE.Controllers
             return View( "AddHivePage" );
         }
 
-        public IActionResult MyHivesDash()
+        public IActionResult MyHivesDash(  )
         {
             if( HttpContext.Session.GetInt32( "userid" ) == null )
             {
                 return RedirectToAction( "AddHivePage", "Hive" );
             }
-            user RetrievedUser = _context.users.SingleOrDefault( u => u.userid == ( int )
-                                                HttpContext.Session.GetInt32( "userid" ));
+            user RetrievedUser = _context.users.SingleOrDefault( u => u.userid == ( int ) HttpContext.Session.GetInt32( "userid" ));
 
 
             List<hive> AllMyHives = _context.hives
-                                        .OrderByDescending( hi => hi.age )
-                                        .Include( u => u.userid )
+                                        //.OrderByDescending( hi => hi.age )
+                                        .Include( u => u.user )
+                                        .Where( w => w.userid == RetrievedUser.userid )
                                         //.ThenInclude( g => g.user )
                                         .ToList();
 
-            ViewBag.RetrievedUser = HttpContext.Session.GetInt32( "userid" );
+            ViewBag.RetrievedUser = RetrievedUser;
 
             return View( "MyHivesPage", AllMyHives );
         }
@@ -103,8 +103,9 @@ namespace BEE.Controllers
         }
 
 
-        public IActionResult EditHiveForm( int id, HiveViewModel model )
+        public IActionResult EditHiveForm( int id, hive model )
         {
+            Console.WriteLine(id);
             hive RetrievedHive = _context.hives.SingleOrDefault( hi => hi.hiveid == id );
 
             RetrievedHive.hiveAddress = model.hiveAddress;
