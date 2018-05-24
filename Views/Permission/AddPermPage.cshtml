@@ -1,0 +1,73 @@
+@model BEE.Models.PermissionViewModel
+<div asp-validation-summary="All"></div>
+@if( TempData["error"] != null )
+{
+    <p>@TempData["error"]</p>
+}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-area="" asp-controller="Home" asp-action="LoggedInIndex" class="navbar-brand">BEE</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a class="align-right" asp-area="" asp-controller="Map" asp-action="Places">Hive Map</a></li>
+                <li><a class="align-right" asp-area="" asp-controller="Hive" asp-action="MyHivesDash">My Hives</a></li>
+                <li><a class="align-right" asp-area="" asp-controller="Home" asp-action="GivePermission">Give Permission</a></li>
+                <li><a class="align-right" asp-area="" asp-controller="Home" asp-action="LogOut">Log Out</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+
+
+
+<h3> Would You like to give Beekeepers permission to use your land? </h3>
+
+<div class="container ">
+
+    
+    <form asp-controller="Permission" asp-action="CreatePermissionForm" method="POST">
+        
+        <div class="form-group">
+            <!-- <label asp-for="hiveAddress"></label> -->
+            <input class ="form-control" asp-for="landAmt"/><br>
+        </div>
+        
+        <!-- <div class="form-group"> -->
+            <!-- <label asp-for="allergies"></label> -->
+            <!-- <input class ="form-control" asp-for="allergies"/><br>
+        </div> -->
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="allergies">
+                Yes, I AM Allergic to Bees
+            </label>
+        </div>
+
+        <div class="form-group">
+            <!-- <label asp-for="status"></label> -->
+            <input class ="form-control" asp-for="accessInfo"/><br>
+        </div>
+
+        <div class="form-group">
+            <!-- <label asp-for="notes"></label> -->
+            <input class ="form-control" asp-for="accessTime"/><br>
+        </div>
+    
+        <div class="form-group">
+            <button type="submit" class="btn btn-info"> Give Permission </button>
+        </div>
+
+    </form>
+    
+</img>
