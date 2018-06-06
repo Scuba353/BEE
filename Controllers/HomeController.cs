@@ -21,6 +21,10 @@ namespace BEE.Controllers
         {
             return View();
         }
+        public IActionResult LoggedInIndex()
+        {
+            return View("IndexTwo");
+        }
         public IActionResult LoginUser()
         {
             return View("Register");

@@ -29,15 +29,25 @@ body {
 #Register{
     display: inline-block;
     vertical-align: top;
-    margin-left: 10%;
+    margin-left: 20%;
 }
 #Login{
     display: inline-block;
+    vertical-align: top;
+    margin-left: 20%;
     
 }
+
 #map{
     height: 500px;
 }
+
+.loginphoto{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+}
+
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
@@ -45,4 +55,25 @@ body {
     .carousel-caption {
         display: none;
     }
+}
+
+
+
+#HiveAddBG{
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('/images/hiveback2.jpg');
+    padding-top: 25px;
+}
+
+#HiveCityStateZip{
+    padding-bottom: 70px;
+}
+
+#HiveCity{
+    padding: 0px;
+}
+
+#HiveZip{
+    padding: 0px;
 }
