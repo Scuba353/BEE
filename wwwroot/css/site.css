@@ -37,15 +37,16 @@ body {
     margin-left: 20%;
     
 }
+
+#map{
+    height: 500px;
+}
+
 .loginphoto{
     height: 100%;
     background-repeat: no-repeat;
     background-size: 100% 100%; 
 }
-
-#map {
-    height: 400px;
-  }
 
 
 /* Hide/rearrange for smaller screens */

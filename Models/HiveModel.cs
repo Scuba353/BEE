@@ -23,9 +23,6 @@ namespace BEE.Models
         
         [ForeignKey("userid")]
         public int userid { get; set; }
-
-
-
         public user user { get; set; }
 
 
