@@ -3,6 +3,8 @@
 }
 
 
+
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -24,9 +26,141 @@
         </div>
     </div>
 </nav>
-<h1>All Hive Locations!</h1>
-<p>Please allow a moment for the map to locate your position.</p>
-<div id="map"></div>
+<h1 class= "text-center">Check out all the Hive Locations in your area!</h1>
+<p class= "mark text-center">Please allow a moment for the map to locate your position.</p>
+<div class="row">
+    <div class="col-sm-4" style="Overflow: scroll; height:500px;">
+        <h3>List of All Active Hives:</h3>
+            @foreach (var g in ViewBag.AllHives)
+            {<p><span class="hiveAddress hidden">@g.hiveAddress, @g.hiveCity, @g.hiveState, @g.hiveZip</span></p>
+            <p><span class="hiveInfo ">Hive Information: <br> Address: @g.hiveAddress, @g.hiveCity, @g.hiveState, @g.hiveZip <br> Age: @g.age,<br> Status: @g.status <br> Notes: @g.notes</span></p>}
+          
+    </div>
+    <div class="col-sm-8 ">
+        <div id="map" style="height:500px;"></div>
+    </div>
+</div>
+
+<script>
+
+var map, infoWindow, locations;
+
+//gets the information from the HTML Viewbag
+var arr= (document.getElementsByClassName('hiveAddress'));
+var arr2= (document.getElementsByClassName('hiveInfo'));
+    //console.log("arr2", arr2)
+
+//sets the info into usable arrays for the JS to manage
+var locations= []
+var info_locations= []
+
+//populates the locations array
+    //console.log("locations", locations)
+for(i=0; i<arr.length; i++){
+  locations.push(arr[i].innerHTML)
+}
+    //console.log("locaions variable,", arr[0].innerHTML)
+
+//populates the info_location array
+for(i=0; i<arr2.length; i++){
+  info_locations.push([arr2[i].innerHTML])
+}
+    //console.log("infolocation array", info_locations)
+
+
+//Displays GoogleMap in the map div of the HTML
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 39.8283, lng: -98.5795},
+      zoom: 9
+    });
+    infoWindow = new google.maps.InfoWindow;
+
+//Sets center of the map at the current location of the individual
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+
+        infoWindow.setPosition(pos);
+        infoWindow.setContent('Location found.');
+        infoWindow.open(map);
+        map.setCenter(pos);
+      }, function() {
+        handleLocationError(true, infoWindow, map.getCenter());
+      });
+    } 
+    else {
+//Sets center of map to hardcoded center if browser doesn't support Geolocation
+      handleLocationError(false, infoWindow, map.getCenter());
+    }
+
+
+    var marker, i, infoWindow2;
+//For loop sets markers at each address in the locations array using geocoder
+              //console.log("locations2", locations)
+    for (i=0; i<locations.length; i++){
+              //console.log("single location",locations[i])
+      var geocoder; 
+      geocoder = new google.maps.Geocoder();
+      var address = locations[i];
+      var i2= 0
+              //var info= info_locations
+              //console.log("address",[i], address)
+//geocoder takes address from locations array set above and locates it using google map service
+      geocoder.geocode( {'address': address}, function(results, status) {
+              //console.log(i2)
+              //console.log("inside geocode", info_locations[i])
+              //console.log("address inside geocode", address)
+              //console.log("status", status)
+              //console.log("results", results)
+              //console.log("results", results[0].formatted_address)
+        var marker_info= results[0].formatted_address
+              //console.log("marker_info", marker_info)
+//If geocoder returns a status of OK it creates an infowindow and a marker
+        if (status == 'OK') {
+              //console.log("i2", i2)
+              //console.log("inside ok markers", info_locations)
+          var infowindow= new google.maps.InfoWindow({
+            content: "" +info_locations[i2]
+          })
+          
+          var marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location  
+          });
+
+//adds a click listner to each marker.  Infobox opens when marker is clicked
+              //console.log("after status ok info location", info_locations)
+          marker.addListener('click', function() {
+          infowindow.open(map,marker);
+          });
+          i2= i2+1
+        } //end of IF status OK
+//If status is not OK it returns an error in an alert
+        else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });//end of geocoder function
+    } //end of for loop for locations/markers
+  } //end of initMap
+
+
+//function for errors when geolocating the users position
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+                          'Error: The Geolocation service failed.' :
+                          'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.open(map);
+  } //end of handleLocaitonError
+
+</script>
+
+
+
 <script src="~/js/site.js"></script>
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgzpuX4yBn3Ae67p0s0Zkera5oPurNycU&callback=initMap">
