@@ -32,12 +32,12 @@
 
 <h3> Would You like to give Beekeepers permission to use your land? </h3>
 
-<div class="container ">
+<div class="container img-fluid" id="PermAddBG">
 
     
     <form asp-controller="Permission" asp-action="CreatePermissionForm" method="POST">
         
-        <div class="form-group">
+        <div class="form-group landAmountForm">
             <!-- <label asp-for="hiveAddress"></label> -->
             <input class ="form-control" asp-for="landAmt"/><br>
         </div>
@@ -48,9 +48,9 @@
         </div> -->
 
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <input class="form-check-input" type="checkbox" name="allergies" value="true" id="PermCheck"/>
             <label class="form-check-label" for="allergies">
-                Yes, I AM Allergic to Bees
+                <h4>Yes, I AM Allergic to Bees</h4>
             </label>
         </div>
 
