@@ -77,3 +77,60 @@ body {
 #HiveZip{
     padding: 0px;
 }
+
+.landAmountForm{
+    margin-top: 35px;
+}
+
+#PermAddBG{
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('/images/permFormBG.jpg');
+    padding-top: 25px;
+}
+
+#PermAddBG h4{
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.1em;
+    margin-bottom: 35px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#PermCheck {
+    width: 35px;
+    height: 35px;
+    margin-top: 15px;
+}
+
+#myHivesBackImage{
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('/images/myHivesBack.jpg');
+}
+
+#myHivesTableText{
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.1em;
+    display: inline-block;
+    vertical-align: middle;
+    padding-bottom: 50px;
+}
+
+#myHivesTableText p{
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.1em;
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 5px;
+}
+
+#myHivesBtns{
+    background: linear-gradient(#F1C40F, #AF601A);
+    box-shadow: black 0.1em 0.1em 0.4em;
+    border: black;
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.1em;
+}
+
+

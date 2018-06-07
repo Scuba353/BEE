@@ -21,7 +21,7 @@
             <ul class="nav navbar-nav">
                 <li><a class="align-right" asp-area="" asp-controller="Map" asp-action="Places">Hive Map</a></li>
                 <li><a class="align-right" asp-area="" asp-controller="Hive" asp-action="AddNewHivePage">Add Hive</a></li>
-                <li><a class="align-right" asp-area="" asp-controller="Home" asp-action="GivePermission">Give Permission</a></li>
+                <li><a class="align-right" asp-area="" asp-controller="Permission" asp-action="GivePermissionPage">Give Permission</a></li>
                 <li><a class="align-right" asp-area="" asp-controller="Home" asp-action="LogOut">Log Out</a></li>
 
             </ul>
@@ -30,12 +30,12 @@
 </nav>
 <br>
 
-<div class="container" >
-
-
 <h3> Here are All the Hives You're Managing, @ViewBag.RetrievedUser.firstName: </h3>
 
-    <div class="table-responsive">
+<div class="container img-fluid" id="myHivesBackImage" >
+
+    <div class="table-responsive" id="myHivesTableText">
+
     <table class="table">
         <thead>
             <tr>
@@ -43,7 +43,7 @@
                 <th>City</th>
                 <th>State</th>
                 <th>Zip</th>
-                <th>Age of Hive</th>
+                <th>Hive Age</th>
                 <th>Status</th>
                 <th>Notes</th>
                 <th></th>
@@ -54,27 +54,27 @@
             @foreach( var rev in Model )
             {
                 <tr>
-                    <td>@rev.hiveAddress</td>
-                    <td>@rev.hiveCity</td>
-                    <td>@rev.hiveState</td>
-                    <td>@rev.hiveZip</td>
-                    <td>@rev.age</td>
-                    <td>@rev.status</td>
-                    <td>@rev.notes</td>
+                    <td><p>@rev.hiveAddress</p></td>
+                    <td><p>@rev.hiveCity</p></td>
+                    <td><p>@rev.hiveState</p></td>
+                    <td><p>@rev.hiveZip</p></td>
+                    <td><p>@rev.age</p></td>
+                    <td><p>@rev.status</p></td>
+                    <td><p>@rev.notes</p></td>
                     <td>
                     <form asp-controller="Hive" asp-action="HiveDetails" asp-route-id="@rev.hiveid" method="Post">
-                        <button type="submit">Edit Hive</button>
+                        <button type="submit" class="btn btn-info" id="myHivesBtns">Edit Hive</button>
                     </form>
                     </td>
+                    <br>
                     <td>
                     <form asp-controller="Hive" asp-action="DeleteHiveForm" asp-route-id="@rev.hiveid" method="Post">
-                        <button type="submit">Delete Hive</button>
+                        <button type="submit" class="btn btn-info" id="myHivesBtns">Delete Hive</button>
                     </form>
                     </td>
                 </tr>
-                
             }
         </tbody>
     </table>
     </div>
-</div>
+</img>
