@@ -18,9 +18,12 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a class="align-left" asp-area="" asp-controller="Login" asp-action="Index">Add Hive</a></li>
-                <li><a class="align-left" asp-area="" asp-controller="Login" asp-action="Index">Give Permission</a></li>
-                <li><a class="align-right" asp-area="" asp-controller="Login" asp-action="Index">Logout</a></li>
+                <li><a class="align-right" asp-area="" asp-controller="Map" asp-action="Places">Hive Map</a></li>
+                <li><a class="align-right" asp-area="" asp-controller="Hive" asp-action="MyHivesDash">My Hives</a></li>
+                <li><a class="align-right" asp-area="" asp-controller="Hive" asp-action="AddNewHivePage">Add Hive</a></li>
+                <li><a class="align-right" asp-area="" asp-controller="Permission" asp-action="GivePermissionPage">Give Permission</a></li>
+                <li><a class="align-right" asp-area="" asp-controller="Permission" asp-action="PermissionDash">Open Permissions</a></li>
+                <li><a class="align-right" asp-area="" asp-controller="Home" asp-action="LogOut">Log Out</a></li>
 
             </ul>
         </div>
@@ -33,7 +36,7 @@
         <h3>List of All Active Hives:</h3>
             @foreach (var g in ViewBag.AllHives)
             {<p><span class="hiveAddress hidden">@g.hiveAddress, @g.hiveCity, @g.hiveState, @g.hiveZip</span></p>
-            <p><span class="hiveInfo ">Hive Information: <br> Address: @g.hiveAddress, @g.hiveCity, @g.hiveState, @g.hiveZip <br> Age: @g.age,<br> Status: @g.status <br> Notes: @g.notes</span></p>}
+            <p><span class="hiveInfo ">Hive Information: <br> Address: @g.hiveAddress, @g.hiveCity, @g.hiveState, @g.hiveZip <br> Age: @g.age<br> Status: @g.status <br> Notes: @g.notes</span></p>}
           
     </div>
     <div class="col-sm-8 ">

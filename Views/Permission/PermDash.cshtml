@@ -1,4 +1,4 @@
-@model List<BEE.Models.hive>
+@model List<BEE.Models.permission>
 
 
 <div asp-validation-summary="All"></div>
@@ -32,50 +32,42 @@
 </nav>
 <br>
 
-<h3> Here are All the Hives You're Managing, @ViewBag.RetrievedUser.firstName: </h3>
+<div class="container" >
 
-<div class="container img-fluid" id="myHivesBackImage" >
 
-    <div class="table-responsive col-lg-12" id="myHivesTableText">
+<h3> Available properties: </h3>
+<h5 class= "mark">Prior to claiming a property, please reach out to the property owner for additional details and contract.</h5>
+
+    <div class="table-responsive">
     <table class="table">
         <thead>
             <tr>
-                <th>Address</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Zip</th>
-                <th>Hive Age</th>
-                <th>Status</th>
-                <th>Notes</th>
-                <th></th>
+                <th>Property</th>
+                <th>Allergies</th>
+                <th>Property Info</th>
+                <th>Access Time</th>
+                <th>Contact Info</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach( var rev in Model )
+            @foreach( var perm in Model )
             {
                 <tr>
-                    <td><p>@rev.hiveAddress</p></td>
-                    <td><p>@rev.hiveCity</p></td>
-                    <td><p>@rev.hiveState</p></td>
-                    <td><p>@rev.hiveZip</p></td>
-                    <td><p>@rev.age</p></td>
-                    <td><p>@rev.status</p></td>
-                    <td><p>@rev.notes</p></td>
+                    <td>@perm.landAmt</td>
+                    <td>@perm.allergies</td>
+                    <td>@perm.accessInfo</td>
+                    <td>@perm.accessTime</td>
+                    <td>@perm.users.email</td>
                     <td>
-                    <form asp-controller="Hive" asp-action="HiveDetails" asp-route-id="@rev.hiveid" method="Post">
-                        <button type="submit" class="btn btn-info" id="myHivesBtns">Edit Hive</button>
-                    </form>
-                    </td>
-                    <br>
-                    <td>
-                    <form asp-controller="Hive" asp-action="DeleteHiveForm" asp-route-id="@rev.hiveid" method="Post">
-                        <button type="submit" class="btn btn-info" id="myHivesBtns">Delete Hive</button>
+                    <form asp-controller="Permission" asp-action="DeletePermFromList" asp-route-id="@perm.permissionid" method="Post">
+                        <button type="submit" class="btn btn-info" id="myHivesBtns">Claim Permission</button>
                     </form>
                     </td>
                 </tr>
+                
             }
         </tbody>
     </table>
     </div>
-</img>
+</div>
