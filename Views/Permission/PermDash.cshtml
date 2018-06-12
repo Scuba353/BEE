@@ -20,8 +20,9 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a class="align-right" asp-area="" asp-controller="Map" asp-action="Places">Hive Map</a></li>
+                <li><a class="align-right" asp-area="" asp-controller="Hive" asp-action="MyHivesDash">My Hives</a></li>
                 <li><a class="align-right" asp-area="" asp-controller="Hive" asp-action="AddNewHivePage">Add Hive</a></li>
-                <li><a class="align-right" asp-area="" asp-controller="Home" asp-action="GivePermission">Give Permission</a></li>
+                <li><a class="align-right" asp-area="" asp-controller="Permission" asp-action="GivePermissionPage">Give Permission</a></li>
                 <li><a class="align-right" asp-area="" asp-controller="Permission" asp-action="PermissionDash">Open Permissions</a></li>
                 <li><a class="align-right" asp-area="" asp-controller="Home" asp-action="LogOut">Log Out</a></li>
 
@@ -34,15 +35,16 @@
 <div class="container" >
 
 
-<h3> Sites available: </h3>
+<h3> Available properties: </h3>
+<h5 class= "mark">Prior to claiming a property, please reach out to the property owner for additional details and contract.</h5>
 
     <div class="table-responsive">
     <table class="table">
         <thead>
             <tr>
-                <th>Land Amount</th>
+                <th>Property</th>
                 <th>Allergies</th>
-                <th>Access Info</th>
+                <th>Property Info</th>
                 <th>Access Time</th>
                 <th>Contact Info</th>
                 <th></th>
@@ -56,10 +58,10 @@
                     <td>@perm.allergies</td>
                     <td>@perm.accessInfo</td>
                     <td>@perm.accessTime</td>
-                    <td>@perm.userid</td>
+                    <td>@perm.users.email</td>
                     <td>
                     <form asp-controller="Permission" asp-action="DeletePermFromList" asp-route-id="@perm.permissionid" method="Post">
-                        <button type="submit">Claim Permission</button>
+                        <button type="submit" class="btn btn-info" id="myHivesBtns">Claim Permission</button>
                     </form>
                     </td>
                 </tr>

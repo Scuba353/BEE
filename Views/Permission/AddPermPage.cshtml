@@ -19,7 +19,8 @@
             <ul class="nav navbar-nav">
                 <li><a class="align-right" asp-area="" asp-controller="Map" asp-action="Places">Hive Map</a></li>
                 <li><a class="align-right" asp-area="" asp-controller="Hive" asp-action="MyHivesDash">My Hives</a></li>
-                <li><a class="align-right" asp-area="" asp-controller="Home" asp-action="GivePermission">Give Permission</a></li>
+                <li><a class="align-right" asp-area="" asp-controller="Hive" asp-action="AddNewHivePage">Add Hive</a></li>
+                <li><a class="align-right" asp-area="" asp-controller="Permission" asp-action="GivePermissionPage">Give Permission</a></li>
                 <li><a class="align-right" asp-area="" asp-controller="Permission" asp-action="PermissionDash">Open Permissions</a></li>
                 <li><a class="align-right" asp-area="" asp-controller="Home" asp-action="LogOut">Log Out</a></li>
 
@@ -66,7 +67,7 @@
         </div>
     
         <div class="form-group">
-            <button type="submit" class="btn btn-info"> Give Permission </button>
+            <button type="submit" class="btn btn-info" id="myHivesBtns"> Give Permission </button>
         </div>
 
     </form>
