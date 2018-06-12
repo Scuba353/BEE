@@ -45,10 +45,56 @@ namespace BEE.Controllers
                 NewPerm = _context.permissions.SingleOrDefault( p => p.permissionid == NewPerm.permissionid );
                 HttpContext.Session.SetInt32( "permissionid", NewPerm.permissionid );
 
-                return View( "AddPermPage" );//FOR TESTING DB, Should RedirectToAction to a DASH
+                return RedirectToAction( "PermissionDash" );//FOR TESTING DB, Should RedirectToAction to a DASH
 
             }
             return View( "AddPermPage" );
+        }
+
+        // *MI - not sure we need this feature, wasn't in the original plan
+        //however I thought it might be nice––but I'm now running into MySQL
+        //issues and cannot figure it out. Commented out for now.
+        // public IActionResult EditPerm (int id, permission model)
+        // {
+        //     Console.WriteLine(id);
+        //     permission OnePermission = _context.permissions.SingleOrDefault(p => p.permissionid == id);
+
+        //     OnePermission.landAmt = model.landAmt;
+        //     OnePermission.allergies = model.allergies;
+        //     OnePermission.accessInfo = model.accessInfo;
+        //     OnePermission.accessTime = model.accessTime;
+        //     OnePermission.userid = model.userid;
+            
+
+        //     _context.SaveChanges();
+        //     return RedirectToAction("PermissionDash");
+        // }
+        public IActionResult PermissionDash()
+        {
+            if (HttpContext.Session.GetInt32("userid") == null)
+            {
+                return RedirectToAction("CreatePermissionForm", "Permission");
+            }
+            user RetrievedUser = _context.users.SingleOrDefault(u => u.userid == (int)HttpContext.Session.GetInt32("userid"));
+
+
+            List<permission> AllPermissions = _context.permissions
+                                        .OrderByDescending( p => p.landAmt )
+                                        // .Include(u => u.userid)
+                                        // .Where(w => w.userid == RetrievedUser.userid)
+                                        //.ThenInclude( g => g.user )
+                                        .ToList();
+
+            ViewBag.RetrievedUser = RetrievedUser;
+
+            return View("PermDash", AllPermissions);
+        }
+        public IActionResult DeletePermFromList(int id)
+        {
+            permission claimed = _context.permissions.SingleOrDefault(p => p.permissionid == id);
+            _context.permissions.Remove(claimed);
+            _context.SaveChanges();
+            return RedirectToAction("PermissionDash");
         }
 
 
