@@ -80,7 +80,7 @@ namespace BEE.Controllers
 
             List<permission> AllPermissions = _context.permissions
                                         .OrderByDescending( p => p.landAmt )
-                                        // .Include(u => u.userid)
+                                         .Include(u => u.users)
                                         // .Where(w => w.userid == RetrievedUser.userid)
                                         //.ThenInclude( g => g.user )
                                         .ToList();
