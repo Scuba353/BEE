@@ -3,7 +3,7 @@
 <table>
 <tr>
 <td>
-  A multifaceted approach to beekeepin!  Designed to allow urban beekeepers match with landowners who are willing to share their land for this purpose. Doubled as a applications to keep notes and records on hives and creating a community approach to maintaining the pollinators.
+  A multifaceted approach to beekeeping!  Designed to allow urban beekeepers to match with landowners who are willing to share their land for this purpose. Doubles as an application to keep notes and records on hives, and creating a community approach to maintaining the pollinators.
 </td>
 </tr>
 </table>
@@ -26,7 +26,7 @@ The user has the option to login to an existing account or create a new account.
 </p>
 
 ### Forms
-There are a number of forms within the website.  Each form accomplishes a certian task and is coupled with a page that displays the data associate with the form in a engaging manner for the user. 
+There are a number of forms within the website.  Each form accomplishes a certain task and is coupled with a page that displays the data associated with the form in an engaging manner for the user. 
 
 Register a Hive            |  All Registered Hives for a User
 :-------------------------:|:-------------------------:
@@ -36,7 +36,7 @@ Provide Permission for Property            |  All Available Properties
 :-------------------------:|:-------------------------:
 ![](https://github.com/Scuba353/BEE/blob/master/demoImages/GivePermission.png)  |  ![](https://github.com/Scuba353/BEE/blob/master/demoImages/AvailableProperty.png)
 
-Edit A Hive you are managing      |    Apis
+Edit A Hive you are Managing      |    Apis
 :-------------------------:|:-------------------------:
 ![](https://github.com/Scuba353/BEE/blob/master/demoImages/EditHive.png)  |  :honeybee: More features coming soon! :honeybee:
 
@@ -79,7 +79,7 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 ## To-do
 - Add a Blog to the current App where community members can post helpful information or questions.
 - Edit the Claim Properties feature to include the potential property in "My Hives" denoted as pending.
-- Make less user dependednt once an individual claims a property to reach out to the property owner.
+- Make less user dependent once an individual claims a property to reach out to the property owner.
 
 ## Team
 
