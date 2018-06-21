@@ -15,14 +15,14 @@
 Currently, this page is displayed without the navigation links at the top when the page is first visited.  To unlock access to the links and content of the page one must login or register as a user. 
 
 <p align="center">
-<img src="https://github.com/Scuba353/BEE/blob/master/demoImages/LoggedLanding.png" width="525" height="750">
+<img src="https://github.com/Scuba353/BEE/blob/master/demoImages/LoggedLanding.png" width="576px" height="1000px" >
 </p>
 
 ### Login or Register 
 The user has the option to login to an existing account or create a new account.  All fields have specific validation attached. 
 
 <p align="center">
-<img src="https://github.com/Scuba353/BEE/blob/master/demoImages/LogReg.png" width="525" height="750">
+<img src="https://github.com/Scuba353/BEE/blob/master/demoImages/LogReg.png" >
 </p>
 
 ### Forms
